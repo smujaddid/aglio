@@ -1,6 +1,6 @@
 fs = require 'fs'
 path = require 'path'
-drafter = require 'drafter'
+drafter = require 'drafter.js'
 
 INCLUDE = /( *)<!-- include\((.*)\) -->/gmi
 ROOT = path.dirname __dirname
@@ -90,8 +90,15 @@ exports.render = (input, options, done) ->
             .replace(/\r\n?/g, '\n')
             .replace(/\t/g, '    ')
 
+    drafterOptions =
+        type: 'ast'
+        generateSourceMap: false
+        requireBlueprintName: false
+        generateMessageBody: true
+        generateMessageBodySchema: true
+    
     benchmark.start 'parse'
-    drafter.parse filteredInput, type: 'ast', (err, res) ->
+    drafter.parse filteredInput, drafterOptions, (err, res) ->
         benchmark.end 'parse'
         if err
             err.input = input
