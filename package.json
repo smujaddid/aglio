@@ -1,6 +1,6 @@
 {
-  "name": "aglio",
-  "version": "2.3.0",
+  "name": "@smujaddid/aglio",
+  "version": "3.0.0",
   "description": "An API Blueprint renderer with theme support",
   "main": "lib/main.js",
   "bin": {
@@ -20,10 +20,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/danielgtaylor/aglio"
+    "url": "https://github.com/smujaddid/aglio"
   },
   "bugs": {
-    "url": "https://github.com/danielgtaylor/aglio/issues"
+    "url": "https://github.com/smujaddid/aglio/issues"
   },
   "keywords": [
     "api",
